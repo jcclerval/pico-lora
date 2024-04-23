@@ -7,6 +7,7 @@ cmake_minimum_required(VERSION 3.12)
 add_library(LoRa_pico_lib LoRa-RP2040.cpp LoRa-RP2040.h)
 add_library(LoRa_print Print.h Print.cpp)
 
+target_include_directories (LoRa_pico_lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_link_libraries(LoRa_pico_lib pico_stdlib hardware_spi hardware_interp LoRa_print)
 
  # enable usb output, disable uart output
